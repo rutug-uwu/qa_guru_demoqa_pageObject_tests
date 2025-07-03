@@ -111,10 +111,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage clickSubmit(){
+    public void clickSubmit(){
         submitButton.click();
 
-        return this;
     }
 
     public RegistrationPage verifyResultsModalAppears(){
