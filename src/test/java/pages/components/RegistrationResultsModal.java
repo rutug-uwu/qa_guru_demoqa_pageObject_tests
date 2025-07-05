@@ -23,7 +23,7 @@ public class RegistrationResultsModal {
                 .parent().shouldHave(text(value));
     }
 
-    public void verifyModalAppearsNegativ() {
+    public void verifyModalAppearsNegative() {
         modalTitle.shouldNot();
     }
 }

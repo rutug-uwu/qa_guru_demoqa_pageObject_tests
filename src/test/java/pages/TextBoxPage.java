@@ -1,8 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.components.TextBoxResults;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -12,9 +12,12 @@ public class TextBoxPage {
             userEmail = $("#userEmail"),
             userCurrentAddress = $("#currentAddress"),
             userPermanentAddress = $("#permanentAddress"),
-            submitButton = $("#submit");
+            submitButton = $("#submit"),
+            resultFullName = $("#output #name"),
+            resultEmail = $("#output #email"),
+            resultCurrentAddress = $("#output #currentAddress"),
+            resultPermanentAddress = $("#output #permanentAddress");
 
-    TextBoxResults textBoxResults = new TextBoxResults();
 
     public TextBoxPage openPage() {
         open("/text-box");
@@ -50,26 +53,11 @@ public class TextBoxPage {
         submitButton.click();
     }
 
-    public TextBoxPage checkFullName(String value) {
-        textBoxResults.checkFullName(value);
-
-        return this;
-    }
-
-    public TextBoxPage checkEmail(String value) {
-        textBoxResults.checkEmail(value);
-
-        return this;
-    }
-
-    public TextBoxPage checkCurrentAddress(String value) {
-        textBoxResults.checkCurrentAddress(value);
-
-        return this;
-    }
-
-    public void checkPermanentAddress(String value) {
-        textBoxResults.checkPermanentAddress(value);
+    public void checkResult(String userName, String userEmail, String userCurrentAddress, String userPermanentAddress) {
+        resultFullName.shouldHave(text(userName));
+        resultEmail.shouldHave(text(userEmail));
+        resultCurrentAddress.shouldHave(text(userCurrentAddress));
+        resultPermanentAddress.shouldHave(text(userPermanentAddress));
 
     }
 }

@@ -17,10 +17,7 @@ public class TextBoxTest extends TestBase {
                 .clickSubmit();
 
 
-        textBoxPage.checkFullName("Ivanov Ivan")
-                .checkEmail("Qaguru@test.com")
-                .checkCurrentAddress("some street 123")
-                .checkPermanentAddress("another street 123");
+        textBoxPage.checkResult("Ivanov Ivan", "Qaguru@test.com", "some street 123", "another street 123");
     }
 }
 

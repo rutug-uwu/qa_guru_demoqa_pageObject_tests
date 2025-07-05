@@ -131,7 +131,7 @@ public class RegistrationPage {
     }
 
     public void verifyResultsModalNotAppears() {
-        registrationResultsModal.verifyModalAppearsNegativ();
+        registrationResultsModal.verifyModalAppearsNegative();
 
     }
 }
