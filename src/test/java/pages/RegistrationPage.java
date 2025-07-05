@@ -54,6 +54,7 @@ public class RegistrationPage {
         return this;
     }
 
+
     public RegistrationPage setEmail(String value) {
         userEmailInput.setValue(value);
 
@@ -117,8 +118,8 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage verifyResultsModalAppears() {
-        registrationResultsModal.verifyModalAppears();
+    public RegistrationPage verifyResultsModalAppears(String value) {
+        registrationResultsModal.verifyModalAppears(value);
 
         return this;
     }
@@ -127,5 +128,10 @@ public class RegistrationPage {
         registrationResultsModal.verifyResult(key, value);
 
         return this;
+    }
+
+    public void verifyResultsModalNotAppears() {
+        registrationResultsModal.verifyModalAppearsNegativ();
+
     }
 }

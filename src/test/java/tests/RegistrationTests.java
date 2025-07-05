@@ -26,8 +26,7 @@ public class RegistrationTests extends TestBase {
                 .setStateAndCity("NCR", "Delhi")
                 .clickSubmit();
 
-        //Проверяем всё то, что заполнили
-        registrationPage.verifyResultsModalAppears()
+        registrationPage.verifyResultsModalAppears("Thanks for submitting the form")
                 .verifyResult("Student Name", "Ivan Ivanov")
                 .verifyResult("Student Email", "Ivanov@123.com")
                 .verifyResult("Gender", "Male")
@@ -38,5 +37,34 @@ public class RegistrationTests extends TestBase {
                 .verifyResult("Picture", "photo_2022-12-19_20-56-33.jpg")
                 .verifyResult("Address", "Some address 123")
                 .verifyResult("State and City", "NCR Delhi");
+    }
+
+    @Test
+    void successfulRegistrationMinimalTest() {
+        registrationPage.openPage()
+                .hideAd()
+                .setFirstName("Oleg")
+                .setSecondName("Olegov")
+                .setGender()
+                .setPhone("8777777777")
+                .clickSubmit();
+
+        registrationPage.verifyResultsModalAppears("Thanks for submitting the form")
+                .verifyResult("Student Name", "Oleg Olegov")
+                .verifyResult("Gender", "Male")
+                .verifyResult("Mobile", "8777777777");
+    }
+
+    @Test
+    void negativeRegistrationTest() {
+        registrationPage.openPage()
+                .hideAd()
+                .setFirstName("Oleg")
+                .setSecondName("Olegov")
+                .setGender()
+                .setPhone("8777777777")
+                .clickSubmit();
+
+        registrationPage.verifyResultsModalNotAppears();
     }
 }
