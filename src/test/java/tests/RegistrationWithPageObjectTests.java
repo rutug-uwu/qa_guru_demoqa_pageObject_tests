@@ -28,7 +28,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .clickSubmit();
 
 
-        registrationPage.verifyResultsModalAppears("Thanks for submitting the form")
+        registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", "Ivan Ivanov")
                 .verifyResult("Student Email", "Ivanov@123.com")
                 .verifyResult("Gender", "Male")
@@ -51,7 +51,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setPhone("8777777777")
                 .clickSubmit();
 
-        registrationPage.verifyResultsModalAppears("Thanks for submitting the form")
+        registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", "Oleg Olegov")
                 .verifyResult("Gender", "Male")
                 .verifyResult("Mobile", "8777777777");

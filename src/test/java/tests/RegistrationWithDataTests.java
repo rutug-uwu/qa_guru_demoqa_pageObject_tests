@@ -28,7 +28,7 @@ public class RegistrationWithDataTests extends TestBase {
                 .clickSubmit();
 
 
-        registrationPage.verifyResultsModalAppears(data.modalTitle)
+        registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", data.firstName + " " + data.lastName)
                 .verifyResult("Student Email", data.userEmail)
                 .verifyResult("Gender", data.userGender)
@@ -52,7 +52,7 @@ public class RegistrationWithDataTests extends TestBase {
                 .setPhone(data.userPhone)
                 .clickSubmit();
 
-        registrationPage.verifyResultsModalAppears(data.modalTitle)
+        registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", data.firstName + " " + data.lastName)
                 .verifyResult("Gender", data.userGender)
                 .verifyResult("Mobile", data.userPhone);

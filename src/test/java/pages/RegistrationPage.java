@@ -123,8 +123,8 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage verifyResultsModalAppears(String value) {
-        registrationResultsModal.verifyModalAppears(value);
+    public RegistrationPage verifyResultsModalAppears() {
+        registrationResultsModal.verifyModalAppears();
 
         return this;
     }

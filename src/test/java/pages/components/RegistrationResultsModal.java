@@ -8,13 +8,15 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationResultsModal {
 
-    private final SelenideElement modalWindow = $(".modal-dialog"),
-            modalTitle = $(".modal-content"),
+    private final SelenideElement modalWindowInput = $(".modal-dialog"),
+            modalTitleInput = $(".modal-content"),
             modalResult = $(".table-responsive");
 
-    public void verifyModalAppears(String value) {
-        modalWindow.should(appear);
-        modalTitle.shouldHave(text(value));
+    public void verifyModalAppears() {
+        final String modalTitle = "Thanks for submitting the form";
+
+        modalWindowInput.should(appear);
+        modalTitleInput.shouldHave(text(modalTitle));
     }
 
     public void verifyResult(String key, String value) {
@@ -23,6 +25,6 @@ public class RegistrationResultsModal {
     }
 
     public void verifyModalAppearsNegative() {
-        modalTitle.shouldNot(visible);
+        modalTitleInput.shouldNot(visible);
     }
 }

@@ -33,6 +33,4 @@ public class TestData {
             default -> null;
         };
     }
-
-    public String modalTitle = "Thanks for submitting the form";
 }
