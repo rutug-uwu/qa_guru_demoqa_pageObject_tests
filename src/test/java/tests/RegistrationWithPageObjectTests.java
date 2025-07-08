@@ -13,18 +13,20 @@ public class RegistrationWithPageObjectTests extends TestBase {
         registrationPage.openPage()
                 .hideAd()
                 .setFirstName("Ivan")
-                .setSecondName("Ivanov")
+                .setLastName("Ivanov")
                 .setEmail("Ivanov@123.com")
                 .setPhone("89999990000")
                 .setCurrentAddress("Some address 123")
-                .setGender()
+                .setGender("Male")
                 .setDateOfBirth("24", "February", "1999")
                 .setSubject("Physics")
                 .setSubject("English")
-                .setHobbies()
-                .uploadPicture("Img/photo_2022-12-19_20-56-33.jpg")
-                .setStateAndCity("NCR", "Delhi")
+                .setHobbies("Sports")
+                .uploadPicture("photo_2022-12-19_20-56-33.jpg")
+                .setState("NCR")
+                .setCity("Delhi")
                 .clickSubmit();
+
 
         registrationPage.verifyResultsModalAppears("Thanks for submitting the form")
                 .verifyResult("Student Name", "Ivan Ivanov")
@@ -44,8 +46,8 @@ public class RegistrationWithPageObjectTests extends TestBase {
         registrationPage.openPage()
                 .hideAd()
                 .setFirstName("Oleg")
-                .setSecondName("Olegov")
-                .setGender()
+                .setLastName("Olegov")
+                .setGender("Male")
                 .setPhone("8777777777")
                 .clickSubmit();
 
@@ -60,9 +62,8 @@ public class RegistrationWithPageObjectTests extends TestBase {
         registrationPage.openPage()
                 .hideAd()
                 .setFirstName("Oleg")
-                .setSecondName("Olegov")
-                .setGender()
-                .setPhone("8777777777")
+                .setLastName("Olegov")
+                .setGender("Male")
                 .clickSubmit();
 
         registrationPage.verifyResultsModalNotAppears();

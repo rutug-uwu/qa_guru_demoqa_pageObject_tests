@@ -11,14 +11,14 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 public class RegistrationPage {
 
     private final SelenideElement firstNameInput = $("#firstName"),
-            secondNameInput = $("#lastName"),
+            lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
             userPhoneInput = $("#userNumber"),
             userAddressInput = $("#currentAddress"),
-            genderWrapper = $("#gender-radio-1"),
+            genderWrapper = $("#genterWrapper"),
             calendarInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesInput = $("#hobbies-checkbox-1"),
+            hobbiesInput = $("#hobbiesWrapper"),
             pictureInput = $("#uploadPicture"),
             stateInput = $("#state"),
             stateCityWrapper = $("#stateCity-wrapper"),
@@ -48,8 +48,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSecondName(String value) {
-        secondNameInput.setValue(value);
+    public RegistrationPage setLastName(String value) {
+        lastNameInput.setValue(value);
 
         return this;
     }
@@ -73,8 +73,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setGender() {
-        genderWrapper.parent().click();
+    public RegistrationPage setGender(String value) {
+        genderWrapper.$(byText(value)).click();
 
         return this;
     }
@@ -92,8 +92,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setHobbies() {
-        hobbiesInput.parent().click();
+    public RegistrationPage setHobbies(String value) {
+        hobbiesInput.$(byText(value)).click();
 
         return this;
     }
@@ -104,9 +104,14 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setStateAndCity(String state, String city) {
+    public RegistrationPage setState(String state) {
         stateInput.click();
         stateCityWrapper.$(byText(state)).click();
+
+        return this;
+    }
+
+    public RegistrationPage setCity(String city) {
         cityInput.click();
         stateCityWrapper.$(byText(city)).click();
 
