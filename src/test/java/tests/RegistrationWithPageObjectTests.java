@@ -22,7 +22,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setSubject("Physics")
                 .setSubject("English")
                 .setHobbies("Sports")
-                .uploadPicture("photo_2022-12-19_20-56-33.jpg")
+                .uploadPicture("картинка1.jpg")
                 .setState("NCR")
                 .setCity("Delhi")
                 .clickSubmit();
@@ -36,7 +36,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .verifyResult("Date of Birth", "24 February,1999")
                 .verifyResult("Subjects", "Physics, English")
                 .verifyResult("Hobbies", "Sports")
-                .verifyResult("Picture", "photo_2022-12-19_20-56-33.jpg")
+                .verifyResult("Picture", "картинка1.jpg")
                 .verifyResult("Address", "Some address 123")
                 .verifyResult("State and City", "NCR Delhi");
     }
