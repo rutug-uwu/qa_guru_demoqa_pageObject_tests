@@ -15,7 +15,7 @@ public class TestData {
     public String userSubject = faker.options().option("Arts", "Physics", "English", "History", "Maths", "Biology");
     public String userHobbies = faker.options().option("Sports", "Reading", "Music");
     public String userPicture = faker.options().option("картинка1.jpg", "картинка2.jpg");
-    public String day = String.format("%02d", faker.number().numberBetween(1, 29));
+    public String day = String.format("%02d", faker.number().numberBetween(1, 28));
     public String month = faker.options().option("January", "February", "March", "April",
             "May", "June", "July", "August", "September",
             "October", "November", "December");
