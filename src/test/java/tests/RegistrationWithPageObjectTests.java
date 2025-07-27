@@ -39,6 +39,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .verifyResult("Picture", "картинка1.jpg")
                 .verifyResult("Address", "Some address 123")
                 .verifyResult("State and City", "NCR Delhi");
+
     }
 
     @Test
